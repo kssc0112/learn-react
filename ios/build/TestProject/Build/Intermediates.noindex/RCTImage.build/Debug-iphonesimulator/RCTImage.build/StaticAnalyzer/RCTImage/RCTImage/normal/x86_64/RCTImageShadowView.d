@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/kssc0112/reactNative/TestProject/node_modules/react-native/Libraries/Image/RCTImageShadowView.m \
+  /Users/kssc0112/reactNative/TestProject/node_modules/react-native/Libraries/Image/RCTImageShadowView.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/kssc0112/reactNative/TestProject/ios/build/TestProject/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h
