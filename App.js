@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, Button} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
 import PlaceList from './src/components/PlaceList/PlaceList';
 
@@ -26,16 +26,16 @@ export default class App extends Component {
   handleAddPlaceOnPress = (placeName) => {
     this.setState(prevState => {
       return {
-        places: prevState.places.concat(placeName)
+        places: prevState.places.concat({key: '' + Date.now() + Math.random(), value: placeName})
       }
     });
   };
 
-  handleDeletePlaceOnPress = (index) => {
+  handleDeletePlaceOnPress = (key) => {
     this.setState(prevState => {
       return {
-        places: prevState.places.filter((place, i) => {
-          return i !== index;
+        places: prevState.places.filter((place) => {
+          return place.key !== key;
         })
       }
     });
