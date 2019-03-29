@@ -8,6 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View} from 'react-native';
+import { connect } from 'react-redux';
+import { addPlace, deletePlace, selectPlace, deselectPlace } from './src/store/actions/index';
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
 import PlaceList from './src/components/PlaceList/PlaceList';
 import PlaceModal from './src/components/PlaceModal/PlaceModal'
@@ -19,65 +21,33 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
-  state = {
-    places: [],
-    selectedPlace: null
-  };
-
+class App extends Component {
   handleAddPlaceOnPress = (placeName) => {
-    this.setState(prevState => {
-      return {
-        places: prevState.places.concat({
-          key: '' + Date.now() + Math.random(),
-          name: placeName,
-          image: {
-            uri: 'https://i.ytimg.com/vi/fB8MYCGFqC0/maxresdefault.jpg'
-          }
-        })
-      }
-    });
+    this.props.onAddPlace(placeName);
   };
 
   handleOnPressDelete = () => {
-    this.setState(prevState => {
-      return {
-        places: prevState.places.filter((place) => {
-        return prevState.selectedPlace.key !== place.key;
-        }),
-        selectedPlace: null
-      }
-    });
+    this.props.onDeletePlace();
   };
-  handleOnPressClose = (key) => {
-    this.setState(prevState => {
-      return {
-        selectedPlace: null
-      }
-    });
+  handleOnPressClose = () => {
+    this.props.onDeselectPlace();
   };
 
   handlePlaceOnPress = key => {
-    this.setState(prevState => {
-      return {
-        selectedPlace: prevState.places.find((place) => {
-          return place.key === key;
-        })
-      };
-    });
+    this.props.onSelectPlace(key);
   };
 
   render() {
     return (
       <View style={styles.container}>
         <PlaceModal
-            selectedPlace={this.state.selectedPlace}
+            selectedPlace={this.props.selectedPlace}
             onPressDelete={this.handleOnPressDelete}
             onPressClose={this.handleOnPressClose}
         />
         <PlaceInput addPlaceOnPress={this.handleAddPlaceOnPress}/>
         <PlaceList
-          places={this.state.places}
+          places={this.props.places}
           onItemPress={this.handlePlaceOnPress}
         />
       </View>
@@ -94,3 +64,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   }
 });
+
+const mapToStateProps = state => {
+  return {
+    places: state.places.places,
+    selectedPlace: state.places.selectedPlace
+  };
+};
+
+const mapToDispatchProps = dispatch => {
+  return {
+    onAddPlace: (placeName) => dispatch(addPlace(placeName)),
+    onDeletePlace: () => dispatch(deletePlace()),
+    onSelectPlace: (placeKey) => dispatch(selectPlace(placeKey)),
+    onDeselectPlace: () => dispatch(deselectPlace())
+  };
+};
+
+export default connect(mapToStateProps, mapToDispatchProps)(App);
