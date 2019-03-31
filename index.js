@@ -11,8 +11,6 @@ import storeConfig from './src/store/storeConfig';
 
 const store = storeConfig();
 
-
-
 const reduxApp = () => (
   <Provider store={store}>
     <App />
