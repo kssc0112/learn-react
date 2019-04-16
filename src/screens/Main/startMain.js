@@ -23,7 +23,8 @@ const startMain = () => {
             leftButtons: [
               {
                 icon: sources[2],
-                title: "Menu"
+                title: 'SideDrawerButton',
+                id: 'sideDrawerButton'
               }
             ]
           }
@@ -37,7 +38,8 @@ const startMain = () => {
             leftButtons: [
               {
                 icon: sources[2],
-                title: "Menu"
+                title: 'SideDrawerButton',
+                id: 'sideDrawerButton'             
               }
             ]
           }

@@ -6,6 +6,21 @@ import PlaceInput from '../components/PlaceInput';
 import { addPlace } from '../store/actions/index';
 
 class SharePlaceScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
+  }
+  
+  onNavigatorEvent = event => {
+    switch(event.id) {
+      case 'sideDrawerButton':
+        this.props.navigator.toggleDrawer({
+          side: 'left',
+          animated: true
+        });
+        break;
+    }
+  }
   placeAddedHandler = placeName => {
     this.props.addPlace(placeName);
   }
