@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { deletePlace } from '../../store/actions';
+import { deletePlace } from '../store/actions';
 import { connect } from 'react-redux';
 
 class PlaceDetailScreen extends Component {

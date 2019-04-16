@@ -1,18 +1,22 @@
 import { Navigation } from 'react-native-navigation';
-import AuthScreen from './src/screens/Auth/AuthScreen';
-import SharePlaceScreen from './src/screens/SharePlace/SharePlaceScreen';
-import FindPlaceScreen from './src/screens/FindPlace/FindPlaceScreen';
-import PlaceDetailScreen from './src/screens/PlaceDetail/PlaceDetailScreen';
+import AuthScreen from './src/screens/Auth';
+import SharePlaceScreen from './src/screens/SharePlace';
+import FindPlaceScreen from './src/screens/FindPlace';
+import PlaceDetailScreen from './src/screens/PlaceDetail';
+import SideDrawer from './src/screens/SideDrawer';
 import { Provider } from 'react-redux';
 import storeConfig from './src/store/storeConfig';
+import {
+  authScreenKey,
+  sharePlaceScreenKey,
+  findPlaceScreenKey,
+  placeDetailScreenKey,
+  sideDrawerKey
+} from './src/screens/Keys/screenKeys';
 
 // config redux
 const store = storeConfig();
 // Must register the component first before loading.
-export const authScreenKey = 'AuthScreen';
-export const sharePlaceScreenKey = 'SharePlaceScreen';
-export const findPlaceScreenKey = 'FindPlaceScreen';
-export const placeDetailScreenKey = 'PlaceDetailScreen';
 
 Navigation.registerComponent(authScreenKey,
   () => AuthScreen,
@@ -33,6 +37,9 @@ Navigation.registerComponent(placeDetailScreenKey,
   () => PlaceDetailScreen,
   store,
   Provider
+);
+Navigation.registerComponent(sideDrawerKey,
+  () => SideDrawer
 );
 
 Navigation.startSingleScreenApp({

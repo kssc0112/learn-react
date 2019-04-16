@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { placeDetailScreenKey } from '../../../App';
+import { placeDetailScreenKey } from '../screens/Keys/screenKeys';
 
-import PlaceList from '../../components/PlaceList/PlaceList';
+import PlaceList from '../components/PlaceList';
 
 class FindPlaceScreen extends Component {
   itemSelectedHandler = key => {
